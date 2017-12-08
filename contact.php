@@ -1,33 +1,24 @@
 <?php
-$errors = '';
-$myemail = 'theadrianwilliams08@gmail.com';//<-----Put Your email address here.
-if(empty($_POST['name'])  ||
-   empty($_POST['email']) ||
-   empty($_POST['project']))
-{
-    $errors .= "\n Error: all fields are required";
-}
-$name = $_POST['name'];
-$email_address = $_POST['email'];
-$message = $_POST['project'];
-if (!preg_match(
-"/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i",
-$email_address))
-{
-    $errors .= "\n Error: Invalid email address";
+  $firstname = $_POST ['firstname'];
+  $lastname = $_POST ['lastname'];
+  $phone = $_POST ['phone'];
+  $email = $_POST ['email'];
+  $message = $_POST ['message'];
+  $from = $_POST ['From: Hightower Foundation'];
+  $to = 'theadrianwilliams08@gmail.com';
+  $subject = 'Hello';
+
+  $body = "From: $firstname: \n $lastname: \n Phone: $phone \n Email: $email\n Message: $message\n";
+
+  if ($_POST['submit']) {
+    /* Anything that goes in here is only performed if the form is submitted */
+  }
+  if ($_POST['submit']) {
+    if (mail ($to, $subject, $body, $from)) {
+        echo '<p>Your message has been sent!</p>';
+    } else {
+        echo '<p>Something went wrong, go back and try again!</p>';
+    }
 }
 
-if( empty($errors))
-{
-$to = $myemail;
-$email_subject = "Contact form submission: $name";
-$email_body = "You have received a new message. ".
-" Here are the details:\n Name: $name \n ".
-"Email: $email_address\n Message \n $message";
-$headers = "From: $myemail\n";
-$headers .= "Reply-To: $email_address";
-mail($to,$email_subject,$email_body,$headers);
-//redirect to the 'thank you' page
-header('Location: index.html');
-}
 ?>
