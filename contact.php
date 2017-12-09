@@ -4,21 +4,23 @@
   $phone = $_POST ['phone'];
   $email = $_POST ['email'];
   $message = $_POST ['message'];
-  $from = $_POST ['From: Hightower Foundation'];
-  $to = 'theadrianwilliams08@gmail.com';
-  $subject = 'Hello';
 
-  $body = "From: $firstname: \n $lastname: \n Phone: $phone \n Email: $email\n Message: $message\n";
+  /* Message that will be sent in email */
+  $comment = "Hello!
 
-  if ($_POST['submit']) {
-    /* Anything that goes in here is only performed if the form is submitted */
-  }
-  if ($_POST['submit']) {
-    if (mail ($to, $subject, $body, $from)) {
-        echo '<p>Your message has been sent!</p>';
-    } else {
-        echo '<p>Something went wrong, go back and try again!</p>';
-    }
-}
+  You have received an email from:
+
+  Name: $firstname $lastname
+  Phone: $phone
+  Email: $email
+  Message: $message";
+
+  /* Send the message using mail() function */
+  mail("theadrianwilliams08@gmail.com", "A new message", $message);
+
+  /* Redirect visitor to the thank you page */
+  header('Location: contact.html');
+  exit();
+
 
 ?>
