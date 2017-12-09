@@ -24,14 +24,14 @@
           <li><a href="history.html" class="black-text">History</a></li>
           <li><a href="donate.html" class="black-text">Donate</a></li>
           <li><a href="apply.html" class="black-text">Apply</a></li>
-          <li><a href="contact2.html" class="black-text">Contact</a></li>
+          <li><a href="contact2.php" class="black-text">Contact</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
           <li><a href="index.html" class="black-text">Home</a></li>
           <li><a href="history.html" class="black-text">History</a></li>
           <li><a href="donate.html" class="black-text">Donate</a></li>
           <li><a href="apply.html" class="black-text">Apply</a></li>
-          <li><a href="contact2.html" class="black-text">Contact</a></li>
+          <li><a href="contact2.php" class="black-text">Contact</a></li>
         </ul>
     </nav>
   </div>
